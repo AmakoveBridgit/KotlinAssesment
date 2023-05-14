@@ -2,7 +2,19 @@ fun main(args: Array<String>) {
 var myDetails=CurrentAccount("3122878999","AmakoveBridgit",20000)
  println(  multiples (1..1000))
   println( randomString("Anitah"))
-}
+
+
+        val password1 = "password123"
+        val password2 = "12345678"
+        val password3 = "password"
+        val password4 = "abcdefghi"
+
+        println(isValidPassword(password1))
+        println(isValidPassword(password2))
+        println(isValidPassword(password3))
+        println(isValidPassword(password4))
+    }
+
 //1. Write and invoke one function that takes in a random string and returns the
 //following values: first character, last character, length of the string and
 //whether it begins with a vowel or not. (6pts)
@@ -29,22 +41,19 @@ fun randomString(name:String):String {
 //4. Must contain a digit
 //Your function should determine whether the password provided is valid or not.
 //The function returns true/false (7pts)
-fun myPassword(password:String):String{
-   if(password.length<=8){
-      return "is valid"
-  }
-    else if(password.length<=16){
-        return "is valid"
-   }
-    else if(password=="digit"){
-        return "is valid"
-   }
-    else{
-
-   }
-   return "not valid"
-
+fun isValidPassword(password: String): Boolean {
+    if (password.length < 8 || password.length > 16) {
+        return false
+    }
+    if (password == "password") {
+        return false
+    }
+    if (!password.any { it.isDigit() }) {
+        return false
+    }
+    return true
 }
+
 
 
 
@@ -83,6 +92,8 @@ fun multiples(num:IntRange){
 
 class CurrentAccount(var accountNumber:String,var accountName:String,var balance:Int){
     fun deposit(amount:Double){
+        var deposit=10000
+
 
 
     }
